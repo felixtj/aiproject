@@ -1,7 +1,0 @@
-[phases.playwright]
-    dependsOn = ['install']
-    cmds = ['playwright install']
-    
-[phases.playwrightdeps]
-    dependsOn = ['install']
-    cmds = ['playwright install-deps']
