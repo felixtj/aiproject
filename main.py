@@ -2,7 +2,12 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-print ("masuk")
+from langchain_community.document_loaders import AsyncChromiumLoader
+
+urls = ["https://www.centrayasa.com"]
+loader = AsyncChromiumLoader(urls)
+docs = loader.load()
+print(docs[0].page_content[0:100])
 
 @app.get("/")
 async def root():
